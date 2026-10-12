@@ -157,6 +157,32 @@ Choose a ready-made layout using the `banner` option:
 | `'bar-top'` | Full-width bar anchored to the top edge |
 | `'modal'` | Centered modal window with a dimmed page backdrop (sets `overlay: true` automatically) |
 
+### Layout Previews
+
+#### 1. `banner: 'box-left'` *(Default)*
+![box-left](docs/images/box-left.png)
+
+#### 2. `banner: 'box-right'`
+![box-right](docs/images/box-right.png)
+
+#### 3. `banner: 'box-center'`
+![box-center](docs/images/box-center.png)
+
+#### 4. `banner: 'box-wide'`
+![box-wide](docs/images/box-wide.png)
+
+#### 5. `banner: 'cloud'`
+![cloud](docs/images/cloud.png)
+
+#### 6. `banner: 'bar-bottom'`
+![bar-bottom](docs/images/bar-bottom.png)
+
+#### 7. `banner: 'bar-top'`
+![bar-top](docs/images/bar-top.png)
+
+#### 8. `banner: 'modal'` *(Centered with Backdrop Dimming)*
+![modal](docs/images/modal.png)
+
 You can also dim the page background and prevent page interactions for any layout by setting `overlay: true`:
 
 ```ts
@@ -164,6 +190,28 @@ consent({
   gtmId: 'GTM-XXXXXX',
   banner: 'box-right',
   overlay: true,
+})
+```
+
+## Floating Badge (Cookie Icon)
+
+Allow visitors to reopen cookie preferences at any time with a floating button:
+
+```ts
+consent({
+  gtmId: 'GTM-XXXXXX',
+  badge: true, // Displays '🍪' in the bottom-left corner
+  badgePosition: 'bottom-left', // 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
+})
+```
+
+You can customize the badge content by passing a string (e.g. emoji, text, or both):
+
+```ts
+consent({
+  gtmId: 'GTM-XXXXXX',
+  badge: '🍪 Cookies',
+  badgePosition: 'bottom-right',
 })
 ```
 

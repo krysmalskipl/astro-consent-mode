@@ -179,6 +179,23 @@ export interface ConsentOptions {
   overlay?: boolean;
 
   /**
+   * Floating button / badge allowing users to reopen cookie preferences anytime:
+   * - `false` (default): disabled (preference reopening handled via footer link or [data-cc="show-preferencesModal"])
+   * - `true`: displays standard badge with cookie emoji 🍪
+   * - `string`: custom label or icon, e.g. '🍪', 'Cookies', '🍪 Ustawienia cookies'
+   */
+  badge?: boolean | string;
+
+  /**
+   * Position of the floating preferences badge:
+   * - 'bottom-left' (default)
+   * - 'bottom-right'
+   * - 'top-left'
+   * - 'top-right'
+   */
+  badgePosition?: 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
+
+  /**
    * Low-level UI configuration for consent and preferences modals.
    * Merged on top of the `banner` preset, so you can fine-tune any of its values.
    */
@@ -253,6 +270,8 @@ export interface ClientConfig {
   translations: Record<string, Translation>;
   gui: GuiOptions;
   overlay: boolean;
+  badge: boolean | string;
+  badgePosition: 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
   revision: number;
   mode: 'basic' | 'advanced';
 }

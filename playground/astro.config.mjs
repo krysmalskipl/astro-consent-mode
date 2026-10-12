@@ -11,6 +11,7 @@ export default defineConfig({
       metaPixelId: '1234567890',
       clarityId: 'abcdef1234',
       mode: 'basic',
+      lang: process.env.LANG_OPT || 'en',
       banner: process.env.BANNER || 'box-left',
     }),
   ],

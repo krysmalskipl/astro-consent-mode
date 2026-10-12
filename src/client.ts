@@ -84,4 +84,42 @@ if (typeof window !== 'undefined') {
     onConsent: syncConsent,
     onChange: syncConsent,
   });
+
+  if (config.badge) {
+    const badgeLabel = typeof config.badge === 'string' ? config.badge : '🍪';
+    const pos = config.badgePosition || 'bottom-left';
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.setAttribute('data-cc', 'show-preferencesModal');
+    btn.setAttribute('aria-label', config.lang === 'pl' ? 'Ustawienia cookies' : 'Cookie settings');
+    btn.innerHTML = badgeLabel;
+
+    const baseStyle =
+      'position:fixed;z-index:9999;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;' +
+      'background:var(--cc-btn-secondary-bg, #ffffff);color:var(--cc-btn-secondary-text, #132a5e);' +
+      'border:1px solid var(--cc-btn-secondary-border, rgba(0,0,0,0.12));border-radius:9999px;' +
+      'padding:8px 14px;font-size:14px;font-weight:600;font-family:inherit;' +
+      'box-shadow:0 4px 14px rgba(0,0,0,0.1);transition:transform 0.15s ease,box-shadow 0.15s ease;';
+
+    const posStyles: Record<string, string> = {
+      'bottom-left': 'bottom:16px;left:16px;',
+      'bottom-right': 'bottom:16px;right:16px;',
+      'top-left': 'top:16px;left:16px;',
+      'top-right': 'top:16px;right:16px;',
+    };
+
+    btn.style.cssText = baseStyle + (posStyles[pos] || posStyles['bottom-left']);
+    btn.addEventListener('mouseenter', () => {
+      btn.style.transform = 'scale(1.05)';
+      btn.style.boxShadow = '0 6px 20px rgba(0,0,0,0.16)';
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'scale(1)';
+      btn.style.boxShadow = '0 4px 14px rgba(0,0,0,0.1)';
+    });
+
+    document.body.appendChild(btn);
+  }
 }
+

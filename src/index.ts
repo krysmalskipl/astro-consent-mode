@@ -200,6 +200,8 @@ export function consent(options: ConsentOptions = {}): AstroIntegration {
 
   const banner = options.banner ?? 'box-left';
   const overlay = options.overlay ?? banner === 'modal';
+  const badge = options.badge ?? false;
+  const badgePosition = options.badgePosition ?? 'bottom-left';
   const preset = BANNER_PRESETS[banner];
   const gui: GuiOptions = {
     consentModal: { ...preset.consentModal, ...options.gui?.consentModal },
@@ -216,6 +218,8 @@ export function consent(options: ConsentOptions = {}): AstroIntegration {
     translations,
     gui,
     overlay,
+    badge,
+    badgePosition,
     revision,
     mode,
   };
