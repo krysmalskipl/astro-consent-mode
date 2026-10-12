@@ -1,6 +1,6 @@
 {
   "name": "@krysmalskipl/astro-consent-mode",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "license": "MIT",
   "description": "Google Consent Mode v2 for Astro - cookie banner, GTM, GA4, Meta Pixel and Microsoft Clarity with zero config.",

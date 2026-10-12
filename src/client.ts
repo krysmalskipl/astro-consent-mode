@@ -76,6 +76,7 @@ if (typeof window !== 'undefined') {
     // Resolved at build time from the `banner` preset merged with `gui`.
     guiOptions: config.gui as CookieConsent.GuiOptions,
     disablePageInteraction: config.overlay,
+    hideFromBots: false,
     categories,
     language: {
       default: config.lang,

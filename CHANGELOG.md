@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.1.2 - 2026-10-12
+
+### Added
+
+- Added floating cookie preference badge (`badge` and `badgePosition` options) allowing visitors to reopen consent preferences at any time.
+- Added `hideFromBots: false` option to ensure cookie banner functions properly in CI environments, headless browser automations, and testing suites.
+- Added documentation screenshots showing all 8 banner layouts with overlay variations and floating badge.
+
+## 0.1.1 - 2026-10-12
+
+### Changed
+
+- Updated npm scope to `@krysmalskipl/astro-consent-mode`.
+
 ## 0.1.0 - 2026-10-12
 
 ### Features

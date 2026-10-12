@@ -1,18 +1,14 @@
 import { defineConfig } from 'astro/config';
 import consent from '@krysmalskipl/astro-consent-mode';
 
-// Test other layouts: BANNER=modal npm run dev (box-left, box-right, box-center, box-wide, cloud, bar-bottom, bar-top, modal)
 export default defineConfig({
-  base: process.env.BASE || '/',
-  outDir: process.env.OUT_DIR || './dist',
+  outDir: './dist-shot',
   integrations: [
     consent({
       gtmId: 'GTM-TEST123',
-      metaPixelId: '1234567890',
-      clarityId: 'abcdef1234',
-      mode: 'basic',
-      lang: process.env.LANG_OPT || 'en',
-      banner: process.env.BANNER || 'box-left',
+      lang: 'en',
+      badge: '🍪 Cookies',
+      badgePosition: 'bottom-left',
     }),
   ],
 });

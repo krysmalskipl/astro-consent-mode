@@ -162,13 +162,13 @@ Choose a ready-made layout using the `banner` option:
 #### 1. `banner: 'box-left'` *(Default)*
 ![box-left](docs/images/box-left.png)
 
-#### 2. `banner: 'box-right'`
+#### 2. `banner: 'box-right'` *(shown with `overlay: true`)*
 ![box-right](docs/images/box-right.png)
 
 #### 3. `banner: 'box-center'`
 ![box-center](docs/images/box-center.png)
 
-#### 4. `banner: 'box-wide'`
+#### 4. `banner: 'box-wide'` *(shown with `overlay: true`)*
 ![box-wide](docs/images/box-wide.png)
 
 #### 5. `banner: 'cloud'`
@@ -177,10 +177,10 @@ Choose a ready-made layout using the `banner` option:
 #### 6. `banner: 'bar-bottom'`
 ![bar-bottom](docs/images/bar-bottom.png)
 
-#### 7. `banner: 'bar-top'`
+#### 7. `banner: 'bar-top'` *(shown with `overlay: true`)*
 ![bar-top](docs/images/bar-top.png)
 
-#### 8. `banner: 'modal'` *(Centered with Backdrop Dimming)*
+#### 8. `banner: 'modal'` *(Centered dialog, `overlay: true` by default)*
 ![modal](docs/images/modal.png)
 
 You can also dim the page background and prevent page interactions for any layout by setting `overlay: true`:
@@ -211,9 +211,12 @@ You can customize the badge content by passing a string (e.g. emoji, text, or bo
 consent({
   gtmId: 'GTM-XXXXXX',
   badge: '🍪 Cookies',
-  badgePosition: 'bottom-right',
+  badgePosition: 'bottom-left',
 })
 ```
+
+#### Floating Badge Preview
+![badge](docs/images/badge.png)
 
 ## Styling
 

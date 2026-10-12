@@ -1,20 +1,219 @@
 ---
-// Strona glowna playground
+// Modern, clean aesthetic landing page preview for screenshots
 ---
 
 <!doctype html>
-<html lang="pl">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Playground - Astro Consent Mode</title>
+    <title>Aura SaaS - Intelligent Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: var(--font-sans);
+        background: #0b0f19;
+        color: #f1f5f9;
+        line-height: 1.6;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+      header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 18px 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(11, 15, 25, 0.8);
+        backdrop-filter: blur(12px);
+      }
+      .logo {
+        font-weight: 800;
+        font-size: 20px;
+        letter-spacing: -0.02em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .logo-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 9999px;
+        background: #3b82f6;
+        box-shadow: 0 0 12px #3b82f6;
+      }
+      nav a {
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0 16px;
+        transition: color 0.15s;
+      }
+      nav a:hover {
+        color: #ffffff;
+      }
+      .hero {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 80px 24px 60px;
+        text-align: center;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        border-radius: 9999px;
+        background: rgba(59, 130, 246, 0.12);
+        border: 1px solid rgba(59, 130, 246, 0.25);
+        color: #60a5fa;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 24px;
+      }
+      h1 {
+        font-size: 56px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      p.subtitle {
+        font-size: 18px;
+        color: #94a3b8;
+        max-width: 680px;
+        margin: 0 auto 36px;
+      }
+      .cta-group {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+      }
+      .btn-primary {
+        background: #3b82f6;
+        color: white;
+        padding: 12px 28px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 15px;
+        text-decoration: none;
+        box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
+      }
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.05);
+        color: #e2e8f0;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 12px 28px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 15px;
+        text-decoration: none;
+      }
+      .grid {
+        max-width: 1100px;
+        margin: 60px auto 80px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding: 0 24px;
+      }
+      .card {
+        background: rgba(30, 41, 59, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 16px;
+        padding: 32px 24px;
+        text-align: left;
+      }
+      .card h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: #f8fafc;
+      }
+      .card p {
+        font-size: 14px;
+        color: #94a3b8;
+        line-height: 1.6;
+      }
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 32px 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        color: #64748b;
+      }
+      footer button {
+        background: none;
+        border: none;
+        color: #94a3b8;
+        cursor: pointer;
+        text-decoration: underline;
+        font-family: inherit;
+        font-size: 13px;
+      }
+    </style>
   </head>
   <body>
-    <main>
-      <h1>Playground Astro Consent Mode</h1>
-      <p>Testowanie integracji Google Consent Mode v2 z banerem cookies.</p>
-      <p><a href="/polityka-prywatnosci/">Polityka prywatności</a></p>
-      <button type="button" data-cc="show-preferencesModal">Ustawienia cookies</button>
+    <header>
+      <div class="logo">
+        <div class="logo-dot"></div>
+        <span>Aura Cloud</span>
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#docs">Documentation</a>
+      </nav>
+      <a href="#signup" class="btn-primary" style="padding: 8px 18px; font-size: 13px;">Get Started</a>
+    </header>
+
+    <main class="hero">
+      <div class="badge">✨ Next-Generation Enterprise Platform</div>
+      <h1>Accelerate your workflow with predictive telemetry</h1>
+      <p class="subtitle">
+        Deploy globally distributed applications with sub-millisecond response latency. Enterprise-grade compliance, end-to-end security, and automated insights built-in.
+      </p>
+      <div class="cta-group">
+        <a href="#start" class="btn-primary">Start free trial</a>
+        <a href="#demo" class="btn-secondary">Request interactive demo</a>
+      </div>
     </main>
+
+    <section class="grid">
+      <div class="card">
+        <h3>⚡ Real-time Telemetry</h3>
+        <p>Monitor critical user interactions, trace performance bottlenecks, and resolve exceptions before they affect client experience.</p>
+      </div>
+      <div class="card">
+        <h3>🔒 Privacy & Compliance</h3>
+        <p>Automated GDPR & ePrivacy signals compliant with Google Consent Mode v2, Meta Data Regulations, and regional analytics constraints.</p>
+      </div>
+      <div class="card">
+        <h3>🚀 Global Edge Delivery</h3>
+        <p>Built for instant execution with low compute overhead, zero external blocking requests, and progressive hydration across 320+ edge regions.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>&copy; 2026 Aura Cloud Technologies Inc. All rights reserved.</span>
+      <button type="button" data-cc="show-preferencesModal">Cookie preferences</button>
+    </footer>
   </body>
 </html>
