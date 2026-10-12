@@ -107,7 +107,7 @@ export type BannerPreset =
   | 'modal';
 
 /**
- * Options for configuring @krysmalski/astro-consent-mode integration.
+ * Options for configuring @krysmalskipl/astro-consent-mode integration.
  */
 export interface ConsentOptions {
   /**

@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import consent from '@krysmalski/astro-consent-mode';
+import consent from '@krysmalskipl/astro-consent-mode';
 
 // Test other layouts: BANNER=modal npm run dev (box-left, box-right, box-center, box-wide, cloud, bar-bottom, bar-top, modal)
 export default defineConfig({

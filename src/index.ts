@@ -39,43 +39,43 @@ function virtualConfigPlugin(clientConfig: ClientConfig) {
 function validateOptions(options: ConsentOptions): void {
   if (options.gtmId && !/^GTM-[A-Z0-9]+$/i.test(options.gtmId)) {
     throw new Error(
-      `[@krysmalski/astro-consent-mode] Invalid "gtmId": expected format "GTM-XXXXXX", received "${options.gtmId}".`
+      `[@krysmalskipl/astro-consent-mode] Invalid "gtmId": expected format "GTM-XXXXXX", received "${options.gtmId}".`
     );
   }
 
   if (options.ga4Id && !/^G-[A-Z0-9]+$/i.test(options.ga4Id)) {
     throw new Error(
-      `[@krysmalski/astro-consent-mode] Invalid "ga4Id": expected format "G-XXXXXX", received "${options.ga4Id}".`
+      `[@krysmalskipl/astro-consent-mode] Invalid "ga4Id": expected format "G-XXXXXX", received "${options.ga4Id}".`
     );
   }
 
   if (options.metaPixelId && !/^\d+$/.test(options.metaPixelId)) {
     throw new Error(
-      `[@krysmalski/astro-consent-mode] Invalid "metaPixelId": expected numeric string, received "${options.metaPixelId}".`
+      `[@krysmalskipl/astro-consent-mode] Invalid "metaPixelId": expected numeric string, received "${options.metaPixelId}".`
     );
   }
 
   if (options.clarityId && !/^[a-z0-9]+$/i.test(options.clarityId)) {
     throw new Error(
-      `[@krysmalski/astro-consent-mode] Invalid "clarityId": expected alphanumeric string, received "${options.clarityId}".`
+      `[@krysmalskipl/astro-consent-mode] Invalid "clarityId": expected alphanumeric string, received "${options.clarityId}".`
     );
   }
 
   if (options.mode && options.mode !== 'basic' && options.mode !== 'advanced') {
     throw new Error(
-      `[@krysmalski/astro-consent-mode] Invalid "mode": expected "basic" | "advanced", received "${options.mode}".`
+      `[@krysmalskipl/astro-consent-mode] Invalid "mode": expected "basic" | "advanced", received "${options.mode}".`
     );
   }
 
   if (options.lang && options.lang !== 'pl' && options.lang !== 'en') {
     throw new Error(
-      `[@krysmalski/astro-consent-mode] Invalid "lang": expected "pl" | "en", received "${options.lang}".`
+      `[@krysmalskipl/astro-consent-mode] Invalid "lang": expected "pl" | "en", received "${options.lang}".`
     );
   }
 
   if (options.banner && !(options.banner in BANNER_PRESETS)) {
     throw new Error(
-      `[@krysmalski/astro-consent-mode] Invalid "banner": expected one of ${Object.keys(BANNER_PRESETS)
+      `[@krysmalskipl/astro-consent-mode] Invalid "banner": expected one of ${Object.keys(BANNER_PRESETS)
         .map((k) => `"${k}"`)
         .join(' | ')}, received "${options.banner}".`
     );
@@ -221,7 +221,7 @@ export function consent(options: ConsentOptions = {}): AstroIntegration {
   };
 
   return {
-    name: '@krysmalski/astro-consent-mode',
+    name: '@krysmalskipl/astro-consent-mode',
     hooks: {
       'astro:config:setup'({ injectScript, updateConfig, logger }) {
         if (!isEnabled) {
@@ -237,13 +237,13 @@ export function consent(options: ConsentOptions = {}): AstroIntegration {
           vite: {
             plugins: [virtualConfigPlugin(clientConfig)],
             optimizeDeps: {
-              exclude: ['@krysmalski/astro-consent-mode'],
+              exclude: ['@krysmalskipl/astro-consent-mode'],
               include: ['vanilla-cookieconsent'],
             },
           },
         });
 
-        injectScript('page', "import '@krysmalski/astro-consent-mode/client';");
+        injectScript('page', "import '@krysmalskipl/astro-consent-mode/client';");
       },
     },
   };

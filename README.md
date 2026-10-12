@@ -1,4 +1,4 @@
-# @krysmalski/astro-consent-mode
+# @krysmalskipl/astro-consent-mode
 
 Google Consent Mode v2 for Astro - cookie banner, GTM, GA4, Meta Pixel and Microsoft Clarity with zero config.
 
@@ -19,20 +19,20 @@ Google Consent Mode v2 for Astro - cookie banner, GTM, GA4, Meta Pixel and Micro
 Add the integration to your Astro project:
 
 ```bash
-npx astro add @krysmalski/astro-consent-mode
+npx astro add @krysmalskipl/astro-consent-mode
 ```
 
 Or install manually via npm:
 
 ```bash
-npm install @krysmalski/astro-consent-mode vanilla-cookieconsent
+npm install @krysmalskipl/astro-consent-mode vanilla-cookieconsent
 ```
 
 Then register the integration in your `astro.config.mjs`:
 
 ```javascript
 import { defineConfig } from 'astro/config';
-import consent from '@krysmalski/astro-consent-mode';
+import consent from '@krysmalskipl/astro-consent-mode';
 
 export default defineConfig({
   integrations: [
@@ -47,7 +47,7 @@ export default defineConfig({
 
 ```javascript
 import { defineConfig } from 'astro/config';
-import consent from '@krysmalski/astro-consent-mode';
+import consent from '@krysmalskipl/astro-consent-mode';
 
 export default defineConfig({
   integrations: [
@@ -137,7 +137,7 @@ Visitors can reopen the cookie preferences modal anytime by clicking any HTML el
 You can also open it programmatically in your client scripts:
 
 ```javascript
-import { showPreferences } from '@krysmalski/astro-consent-mode/client';
+import { showPreferences } from '@krysmalskipl/astro-consent-mode/client';
 
 showPreferences();
 ```
