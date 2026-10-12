@@ -1,0 +1,70 @@
+{
+  "name": "@krysmalski/astro-consent-mode",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "description": "Google Consent Mode v2 for Astro - cookie banner, GTM, GA4, Meta Pixel and Microsoft Clarity with zero config.",
+  "author": {
+    "name": "Krysmalski",
+    "url": "https://krysmalski.pl"
+  },
+  "homepage": "https://krysmalski.pl",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krysmalskipl/astro-consent-mode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/krysmalskipl/astro-consent-mode/issues"
+  },
+  "keywords": [
+    "withastro",
+    "astro-integration",
+    "astro-component",
+    "astro",
+    "cookie-consent",
+    "consent-mode",
+    "consent-mode-v2",
+    "gdpr",
+    "rodo",
+    "google-tag-manager",
+    "ga4",
+    "meta-pixel",
+    "clarity"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./client": "./dist/client.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "astro": ">=5.0.0"
+  },
+  "dependencies": {
+    "vanilla-cookieconsent": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "astro": "^5.4.2",
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.20.8"
+  }
+}

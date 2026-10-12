@@ -1,0 +1,16 @@
+{
+  "name": "playground",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@krysmalski/astro-consent-mode": "file:..",
+    "astro": "^7.3.8",
+    "vanilla-cookieconsent": "^3.1.0"
+  }
+}
